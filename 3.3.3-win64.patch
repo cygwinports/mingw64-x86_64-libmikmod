@@ -1,0 +1,11 @@
+--- origsrc/libmikmod-3.3.3/include/mikmod.h.in	2013-10-15 04:50:02.000000000 -0500
++++ src/libmikmod-3.3.3/include/mikmod.h.in	2013-12-02 00:02:42.871896200 -0600
+@@ -108,7 +108,7 @@ typedef char CHAR;
+ 
+ @DOES_NOT_HAVE_SIGNED@
+ 
+-#if defined (_LP64) || defined(__arch64__) || defined(__alpha) || defined(__x86_64) || defined(__powerpc64__)
++#if defined (_LP64) || defined(__arch64__) || defined(__alpha) || (defined(__x86_64) && !defined(_WIN64)) || defined(__powerpc64__)
+ /* 64 bit architectures */
+ 
+ typedef signed char     SBYTE;  /* 1 byte, signed */

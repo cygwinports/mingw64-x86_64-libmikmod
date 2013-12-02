@@ -1,0 +1,29 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libmikmod"
+VERSION=3.3.3
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="MikMod sound library"
+DESCRIPTION="The MikMod sound library is an excellent way for a programmer
+to add music and sound effects to an application. It is a powerful and
+flexible library, with a simple and easy-to-learn API. "
+HOMEPAGE="http://mikmod.sourceforge.net/"
+SRC_URI="mirror://sourceforge/mikmod/libmikmod-${VERSION}.tar.gz"
+SRC_DIR="libmikmod-${VERSION}"
+PATCH_URI="3.3.3-win64.patch"
+
+DIFF_EXCLUDES="mikmod.info mikmod.h"
+
+CYGCONF_ARGS="
+	--disable-af
+	--disable-alsa
+	--disable-dl
+	--disable-esd
+	--disable-oss
+	--disable-sam9407
+	--enable-threads
+	--disable-ultra
+"
+MAKEOPTS+=" man_MANS= INFO_DEPS= "
