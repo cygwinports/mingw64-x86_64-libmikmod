@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libmikmod"
-VERSION=3.3.11
+VERSION=3.3.11.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="MikMod sound library"
